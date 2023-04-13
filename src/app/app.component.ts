@@ -4,7 +4,13 @@ import {
   Renderer2,
   ViewChild,
   ElementRef,
+  HostListener
 } from '@angular/core';
+import { SVGService } from './svg.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
+declare var $: any;
+
 
 @Component({
   selector: 'app-root',
@@ -12,6 +18,10 @@ import {
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+  nodeForm: FormGroup | any;
+  // Use with the generic validation message class
+  displayMessage: { [key: string]: string } = {};
+
   @ViewChild('tooltip') tooltip!: ElementRef;
   @ViewChild('topDiv') topDiv!: ElementRef;
 
@@ -39,11 +49,12 @@ export class AppComponent implements OnInit {
   ioNodeReflect = 150;
   decisionWidth = 200;
   decisionRotate = 45;
+
   nodes: any[] = [
     {
       nodeId: 1,
       nodeType: 'startend',
-      nodeY: 200,
+      nodeY: 100,
       nodeX: 50,
       name: 'Start',
       className: 'StartClass',
@@ -306,17 +317,11 @@ export class AppComponent implements OnInit {
       name: 'Sure',
       className: 'SureClass',
       touchPoints: {
-        topCenter: {
-          x: 0, y: 0
-        }, rightCenter: {
-          x: 0, y: 0
-        }, bottomCenter: {
-          x: 0, y: 0
-        }, leftCenter: {
-          x: 0, y: 0
-        }, mid: {
-          x: 0, y: 0
-        }
+        topCenter: { x: 0, y: 0 },
+        rightCenter: { x: 0, y: 0 },
+        bottomCenter: { x: 0, y: 0 },
+        leftCenter: { x: 0, y: 0 },
+        mid: { x: 0, y: 0 }
       },
       style: 'fill: #9B59B6; stroke-width: 1; stroke: #d7dbdd',
       parents: [{
@@ -345,7 +350,10 @@ export class AppComponent implements OnInit {
     },
   ];
 
-  constructor(private renderer: Renderer2) { }
+  rex = [0];
+  circleshape = [0];
+
+  constructor(private renderer: Renderer2, private svgService: SVGService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.screenWidth = window.innerWidth - 65 + 'px';
@@ -358,7 +366,73 @@ export class AppComponent implements OnInit {
     this.getClosestPoints();
     this.getPointsForDecision();
     this.getLines();
+    this.nodeForm = this.fb.group({
+      Name: ['', [Validators.required]]
+    });
   }
+
+  addNode() {
+
+  }
+
+  //#region 
+
+  @HostListener('dragstart', ['$event'])
+
+  onDragStart(event: any) {
+    let elementToBeDragged: any;
+    var element = event.target as HTMLElement;
+    elementToBeDragged = element.getElementsByTagName('circle')[0];
+    if (!elementToBeDragged) {
+      elementToBeDragged = element.getElementsByTagName('rect')[0];
+    }
+    event.dataTransfer.setData('text', elementToBeDragged.id);
+  }
+
+  @HostListener('document:dragover', ['$event'])
+  onDragOver(event: any) {
+    event.preventDefault();
+  }
+
+  @HostListener('drop', ['$event'])
+  onDrop(event: any) {
+    
+    $("#exampleModal").modal('show');
+
+    const dropzone = event.target;
+
+    const droppedElementId = event.dataTransfer.getData('text');
+    const droppedElement = document.getElementById(droppedElementId) as any;
+
+    if (droppedElement.tagName === "rect") {
+      this.rex.push(0);
+    }
+    else if (droppedElement.tagName === "circle") {
+      this.circleshape.push(0);
+    }
+
+    if (droppedElement.viewportElement != null) {
+      dropzone.appendChild(droppedElement);
+      droppedElement.setAttribute('draggable', true);
+      const svgPoint = this.svgService.getSVGPoint(event, droppedElement);
+      this.setPosition(droppedElement, { x: svgPoint.x, y: svgPoint.y });
+    }
+  }
+
+  private setPosition(element: any, coord: { x: any, y: any }) {
+    //  console.log("setPosition:-", element.tagName, element, coord);
+    if (element.tagName === 'rect') {
+      element.setAttribute('x', coord.x);
+      element.setAttribute('y', coord.y);
+    }
+    else {
+      element.setAttribute('cx', coord.x);
+      element.setAttribute('cy', coord.y);
+    }
+  }
+
+
+  //#endregion
 
   getPointsForDecision() {
     this.nodes.filter(m => m.nodeType == 'circle' || m.nodeType == 'decision').forEach((currentnode: any) => {
