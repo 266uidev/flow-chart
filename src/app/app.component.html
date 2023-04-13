@@ -1,0 +1,152 @@
+<button (click)="onPrint()">Print</button>
+<div #topDiv class="content" role="main" style="margin: 5px;overflow-y: scroll;height:1200px;height:1200px;">
+  <div #tooltip class="tooltip"></div>
+  <svg id="mainSVG" width="4000" height="4000" style="background-color: #D0ECE7;" onload="makeDraggable(evt)">
+    <defs>
+      <marker id="arrow" viewBox="0 -5 10 10" refX="5" refY="0" markerWidth="4" markerHeight="4" orient="auto">
+        <path class="cool" d="M0,-5L10,0L0,5" class="arrowHead"></path>
+      </marker>
+      <circle id="circle" cx="10" cy="10" r="50" />
+    </defs>
+    <style>
+      .background {
+        fill: #eee;
+      }
+
+      .static {
+        cursor: not-allowed;
+      }
+
+      .draggable {
+        cursor: move;
+      }
+    </style>
+    <script type="text/javascript">
+      function makeDraggable(evt) {
+        var svg = evt.target;
+        svg.addEventListener('mousedown', startDrag);
+        svg.addEventListener('mousemove', drag);
+        svg.addEventListener('mouseup', endDrag);
+
+        function getMousePosition(evt) {
+          var CTM = svg.getScreenCTM();
+          return {
+            x: (evt.clientX - CTM.e) / CTM.a,
+            y: (evt.clientY - CTM.f) / CTM.d
+          };
+        }
+
+        var selectedElement, offset;
+        function startDrag(evt) {
+          if (evt.target.classList.contains('draggable')) {
+            selectedElement = evt.target;
+
+            offset = getMousePosition(evt);
+            offset.x -= parseFloat(selectedElement.getAttributeNS(null, "x"));
+            offset.y -= parseFloat(selectedElement.getAttributeNS(null, "y"));
+          }
+        }
+
+        function drag(evt) {
+          if (selectedElement) {
+            var coord = getMousePosition(evt);
+            selectedElement.setAttributeNS(null, "x", coord.x - offset.x);
+            selectedElement.setAttributeNS(null, "y", coord.y - offset.y);
+          }
+        }
+
+        function endDrag(evt) {
+          selectedElement = null;
+        }
+      }
+    </script>
+
+    <line *ngFor="let arrow of arrows" attr.y1="{{ arrow.y1 }}" attr.x1="{{ arrow.x1  }}" attr.y2="{{ arrow.y2 }}"
+      attr.x2="{{ arrow.x2 }}" attr.style="{{ arrow.lineStyle }}" marker-end="url(#arrow)" marker-start="url(#circle)"
+      attr.class="{{arrow.className}}" />
+
+    <!-- StartEnd start -->
+    <rect *ngFor="let node of startEndNodes" (mousedown)="mouseDown($event,node.name,node.className)"
+      (mouseup)="mouseUp($event,node.name,node.className)" rx="50" attr.y="{{ node.nodeY }}" attr.x="{{ node.nodeX }}"
+      attr.width="{{ nodeWidth }}" attr.height="{{ nodeHeight }}" attr.style="{{ node.style }}"
+      attr.class="{{node.className+ ' draggable'}}" />
+    <text *ngFor="let node of startEndNodes" attr.y="{{ node.nodeY + 35 }}" attr.x="{{ node.nodeX + 20 }}"
+      fill="#34495E" font-size="20" attr.class="{{node.className+'HS'}}">
+      {{ node.nodeId }} {{ node.name }} {{ node.nodeType }}
+    </text>
+    <text *ngFor="let node of startEndNodes" attr.y="{{ node.nodeY + 70 }}" attr.x="{{ node.nodeX + 20 }}"
+      fill="#85929E" font-size="20" attr.class="{{node.className+'HS'}}">
+      Task Details : {{node.childs.length}} Childs
+    </text>
+    <!-- StartEnd end -->
+
+    <!-- process start -->
+    <rect *ngFor="let node of processNodes" (mousedown)="mouseDown($event,node.name,node.className)"
+      (mouseup)="mouseUp($event,node.name,node.className)" attr.y="{{ node.nodeY }}" attr.x="{{ node.nodeX }}"
+      attr.width="{{ nodeWidth }}" attr.height="{{ nodeHeight }}" attr.style="{{ node.style }}"
+      attr.class="{{node.className+ ' draggable'}}" />
+    <text *ngFor="let node of processNodes" attr.y="{{ node.nodeY + 40 }}" attr.x="{{ node.nodeX + 20 }}" font-size="30"
+      style="fill: #82e0aa; stroke-width: 1" attr.class="{{node.className+'HS'}}">
+      &#xf18e;
+    </text>
+    <text *ngFor="let node of processNodes" attr.y="{{ node.nodeY + 20 }}" attr.x="{{ node.nodeX + 180 }}"
+      font-size="20" style="fill: #0e6655; stroke-width: 1;cursor: pointer;" attr.class="{{node.className+'HS'}}"
+      (mouseenter)="mouseEnter($event, 'Click here to Add New node')" (mouseleave)="mouseLeave($event)">
+      &#xf055;
+    </text>
+    <text *ngFor="let node of processNodes" attr.y="{{ node.nodeY + 20 }}" attr.x="{{ node.nodeX + 200 }}"
+      font-size="20" style="fill: #82e0aa; stroke-width: 1;cursor: pointer;" attr.class="{{node.className+'HS'}}"
+      (mouseenter)="mouseEnter($event, 'Click here to Edit node')" (mouseleave)="mouseLeave($event)">
+      &#xf044;
+    </text>
+    <text *ngFor="let node of processNodes" attr.y="{{ node.nodeY + 20 }}" attr.x="{{ node.nodeX + 220 }}"
+      font-size="20" style="fill: #e74c3c; stroke-width: 1;cursor: pointer;" attr.class="{{node.className+'HS'}}"
+      (mouseenter)="mouseEnter($event, 'Click here to Delete node')" (mouseleave)="mouseLeave($event)">
+      &#xf056;
+    </text>
+    <text *ngFor="let node of processNodes" attr.y="{{ node.nodeY + 35 }}" attr.x="{{ node.nodeX + 60 }}" fill="#34495E"
+      font-size="20" attr.class="{{node.className+'HS'}}">
+      {{ node.nodeId }} {{ node.name }} {{ node.nodeType }}
+    </text>
+    <text *ngFor="let node of processNodes" attr.y="{{ node.nodeY + 70 }}" attr.x="{{ node.nodeX + 20 }}" fill="#85929E"
+      font-size="20" attr.class="{{node.className+'HS'}}">
+      Task Details : {{node.childs.length}} Childs
+    </text>
+    <!-- process end-->
+
+    <!-- decision start -->
+    <rect *ngFor="let node of decisionNodes" (mousedown)="mouseDown($event,node.name,node.className)"
+      (mouseup)="mouseUp($event,node.name,node.className)" attr.y="{{ node.nodeY }}" attr.x="{{ node.nodeX }}"
+      attr.width="{{ decisionWidth }}" attr.height="{{ decisionWidth }}" attr.style="{{ node.style }}"
+      attr.class="{{node.className+ ' decision draggable'}}" transform="rotate(45)" />
+    <text *ngFor="let node of decisionNodes" attr.y="{{ node.nodeY + 70 }}" attr.x="{{ node.nodeX  + 15}}"
+      fill="#34495E" font-size="20" attr.class="{{node.className+'HS'}}">
+      {{ node.nodeId }} {{ node.name }} {{ node.nodeType }}
+    </text>
+    <text *ngFor="let node of decisionNodes" attr.y="{{ node.nodeY + 100 }}" attr.x="{{ node.nodeX + 15 }}"
+      fill="#85929E" font-size="20" attr.class="{{node.className+'HS'}}">
+      Task Details : {{node.childs.length}} Childs
+    </text>
+    <!-- decision end -->
+
+    <!-- decision start -->
+    <!-- <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" /> -->
+
+
+    <rect *ngFor="let node of circleNodes" (mousedown)="mouseDown($event,node.name,node.className)"
+      (mouseup)="mouseUp($event,node.name,node.className)" attr.y="{{ node.nodeY }}" attr.x="{{ node.nodeX }}"
+      attr.width="{{ decisionWidth }}" attr.height="{{ decisionWidth }}" attr.style="{{ node.style }}"
+      attr.class="{{node.className+ ' decision draggable'}}" rx="100" />
+    <text *ngFor="let node of circleNodes" attr.y="{{ node.nodeY + 70 }}" attr.x="{{ node.nodeX  + 15}}" fill="#34495E"
+      font-size="20" attr.class="{{node.className+'HS'}}">
+      {{ node.nodeId }} {{ node.name }} {{ node.nodeType }}
+    </text>
+    <text *ngFor="let node of circleNodes" attr.y="{{ node.nodeY + 100 }}" attr.x="{{ node.nodeX + 15 }}" fill="#85929E"
+      font-size="20" attr.class="{{node.className+'HS'}}">
+      Task Details : {{node.childs.length}} Childs
+    </text>
+    <!-- decision end -->
+  </svg>
+  <!-- <pre>{{this.nodes | json}}</pre> -->
+</div>
+<router-outlet></router-outlet>
