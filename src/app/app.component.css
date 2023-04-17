@@ -1,5 +1,5 @@
 svg text {
-  font-family: 'FontAwesome';
+  font-family: "FontAwesome";
 }
 
 .tooltip {
@@ -23,28 +23,23 @@ svg text {
   transform-box: fill-box;
 }
 
-.items-container {
-  display: flex;
+.hide {
+  display: none;
 }
 
-.list-group-item {
-  padding: 0.75rem 2.25rem;
+.show {
+  display: block;
 }
 
-@media (min-width: 576px) {
-  .modal-dialog {
-    max-width: 1000px;
+/* 
+.Line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 1s linear forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
   }
-}
-
-.modal-footer {
-  margin-top: 25px;
-}
-
-.modal-header .close {
-  padding: 1rem;
-  margin: 0rem 0rem -1rem auto;
-}
-.modal-title {
-  margin: 8px 0 8px;
-}
+} */
