@@ -12,61 +12,12 @@
         </image>
       </pattern>
     </defs>
-    <style>
-      .background {
-        fill: #eee;
-      }
 
-      .static {
-        cursor: not-allowed;
-      }
 
-      .draggable {
-        cursor: move;
-      }
-    </style>
-    <script type="text/javascript">
-      function makeDraggable(evt) {
-        var svg = evt.target;
-        svg.addEventListener('mousedown', startDrag);
-        svg.addEventListener('mousemove', drag);
-        svg.addEventListener('mouseup', endDrag);
-
-        function getMousePosition(evt) {
-          var CTM = svg.getScreenCTM();
-          return {
-            x: (evt.clientX - CTM.e) / CTM.a,
-            y: (evt.clientY - CTM.f) / CTM.d
-          };
-        }
-
-        var selectedElement, offset;
-        function startDrag(evt) {
-          if (evt.target.classList.contains('draggable')) {
-            selectedElement = evt.target;
-
-            offset = getMousePosition(evt);
-            offset.x -= parseFloat(selectedElement.getAttributeNS(null, "x"));
-            offset.y -= parseFloat(selectedElement.getAttributeNS(null, "y"));
-          }
-        }
-
-        function drag(evt) {
-          if (selectedElement) {
-            var coord = getMousePosition(evt);
-            selectedElement.setAttributeNS(null, "x", coord.x - offset.x);
-            selectedElement.setAttributeNS(null, "y", coord.y - offset.y);
-          }
-        }
-
-        function endDrag(evt) {
-          selectedElement = null;
-        }
-      }
-    </script>
 
     <!-- menu start -->
     <rect attr.width="{{screenWidth}}" height="50" x="0" y="0" style="fill:#c0f157;stroke-width:1;stroke:rgb(0,0,0)" />
+
     <rect width="30" height="20" x="10" y="10" rx="15" attr.fill="{{isSymbolSelected?'#280DEF':'#48C9B0'}}"
       style="stroke-width:1;stroke:rgb(0,0,0)" (mouseenter)="mouseEnter($event, 'Start/End')"
       (mouseleave)="mouseLeave($event)" (click)="selectSymbol('start')" />
@@ -124,8 +75,78 @@
     <!-- menu end -->
   </svg>
 
+  <div style="height: 40px; display: flex; background-color:#c0f157;stroke-width:1;stroke:rgb(0,0,0)">
+    <div draggable="true">
+      <svg width="50">
+        <rect id="circle-red" width="30" height="20" x="10" y="10" rx="15" attr.fill="{{isSymbolSelected?'#280DEF':'#48C9B0'}}"
+        style="stroke-width:1;stroke:rgb(0,0,0)" (mouseenter)="mouseEnter($event, 'Start/End')"
+        (mouseleave)="mouseLeave($event)" (click)="selectSymbol('start')" >
+        </rect>
+      </svg>
+    </div>
+    <div draggable="true">
+      <svg width="50">
+        <rect id="circle-red2" width="25" height="25" x="10" y="8" rx="20" style="fill:#48C9B0;stroke-width:1;stroke:rgb(0,0,0)"
+      (mouseenter)="mouseEnter($event, 'Process')" (mouseleave)="mouseLeave($event)" >
+        </rect>
+      </svg>
+    </div>
+  </div>
+
+  <style>
+    .background {
+      fill: #eee;
+    }
+
+    .static {
+      cursor: not-allowed;
+    }
+
+    .draggable {
+      cursor: move;
+    }
+  </style>
+  <script type="text/javascript">
+    function makeDraggable(evt) {
+      var svg = evt.target;
+      svg.addEventListener('mousedown', startDrag);
+      svg.addEventListener('mousemove', drag);
+      svg.addEventListener('mouseup', endDrag);
+
+      function getMousePosition(evt) {
+        var CTM = svg.getScreenCTM();
+        return {
+          x: (evt.clientX - CTM.e) / CTM.a,
+          y: (evt.clientY - CTM.f) / CTM.d
+        };
+      }
+
+      var selectedElement, offset;
+      function startDrag(evt) {
+        if (evt.target.classList.contains('draggable')) {
+          selectedElement = evt.target;
+
+          offset = getMousePosition(evt);
+          offset.x -= parseFloat(selectedElement.getAttributeNS(null, "x"));
+          offset.y -= parseFloat(selectedElement.getAttributeNS(null, "y"));
+        }
+      }
+
+      function drag(evt) {
+        if (selectedElement) {
+          var coord = getMousePosition(evt);
+          selectedElement.setAttributeNS(null, "x", coord.x - offset.x);
+          selectedElement.setAttributeNS(null, "y", coord.y - offset.y);
+        }
+      }
+
+      function endDrag(evt) {
+        selectedElement = null;
+      }
+    }
+  </script>
   <svg id="mainSVG" attr.width="{{screenWidth}}" attr.height="{{screenHeight}}" style="background-color: #D0ECE8;"
-    onload="makeDraggable(evt)" (click)="createSelectedSymbol($event)">
+    onload="makeDraggable(evt)" (click)="createSelectedSymbol($event)" appDroppable>
     <defs>
       <marker id="arrow" viewBox="0 -5 10 10" refX="5" refY="0" markerWidth="4" markerHeight="4" orient="auto">
         <path d="M0,-5L10,0L0,5" class="arrowHead"></path>

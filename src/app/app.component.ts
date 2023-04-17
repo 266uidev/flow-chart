@@ -5,9 +5,12 @@ import {
   ViewChild,
   ElementRef,
   TemplateRef,
+  HostListener
 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import * as data from '../assets/workflow/nodes.json';
+import { SvgService } from '../services/svg.service';
+
 
 @Component({
   selector: 'app-root',
@@ -62,7 +65,7 @@ export class AppComponent implements OnInit {
 
   nodes: any = (data as any).default;
 
-  constructor(private renderer: Renderer2, private dialog: MatDialog) {}
+  constructor(private renderer: Renderer2, private dialog: MatDialog, private svgService: SvgService) {}
 
   ngOnInit(): void {
     this.screenWidth = '1800px'; // window.innerWidth + 'px';
@@ -71,6 +74,67 @@ export class AppComponent implements OnInit {
       'margin: 5px;overflow-x: scroll;width:' + this.screenWidth + ';';
     this.initMethod();
   }
+
+  
+  //#region 
+
+  @HostListener('dragstart', ['$event'])
+  onDragStart(event: any) {
+    let elementToBeDragged: any;
+    var element = event.target as HTMLElement;
+    elementToBeDragged = element.getElementsByTagName('circle')[0];
+    if (!elementToBeDragged) {
+      elementToBeDragged = element.getElementsByTagName('rect')[0];
+    }
+    event.dataTransfer.setData('text', elementToBeDragged.id);
+  }
+
+  @HostListener('document:dragover', ['$event'])
+  onDragOver(event: any) {
+    event.preventDefault();
+  }
+
+  @HostListener('drop', ['$event'])
+  onDrop(event: any) {
+    if (event.target.id === "mainSVG") {
+
+      // $("#exampleModal").modal('show');
+
+      const dropzone = event.target;
+      const droppedElementId = event.dataTransfer.getData('text');
+      const droppedElement = document.getElementById(droppedElementId) as any;
+
+      // if (droppedElement.tagName === "rect") {
+      //   // this.rex.push(0);
+      // }
+      // else if (droppedElement.tagName === "circle") {
+      //   // this.circleshape.push(0);
+      // }
+
+      if (droppedElement.viewportElement != null) {
+        dropzone.appendChild(droppedElement);
+        droppedElement.setAttribute('draggable', true);
+        const svgPoint = this.svgService.getSVGPoint(event, droppedElement);
+        this.setPosition(droppedElement, { x: svgPoint.x, y: svgPoint.y });
+      }
+    }
+  }
+
+  private setPosition(element: any, coord: { x: any, y: any }) {
+    //  console.log("setPosition:-", element.tagName, element, coord);
+    if (element.tagName === 'rect') {
+      element.setAttribute('x', coord.x);
+      element.setAttribute('y', coord.y);
+    }
+    else {
+      element.setAttribute('cx', coord.x);
+      element.setAttribute('cy', coord.y);
+    }
+  }
+
+
+  //#endregion
+
 
   initMethod() {
     this.sort_by_key(this.nodes, 'name');
