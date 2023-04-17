@@ -1,0 +1,2172 @@
+[
+  {
+    "nodeId": 1,
+    "nodeType": "startend",
+    "nodeY": 100,
+    "nodeX": 50,
+    "height": 0,
+    "width": 0,
+    "name": "Start",
+    "className": "class1",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "parents": [],
+    "style": "fill: #88EAEA; stroke-width: 1; stroke: #d7dbdd",
+    "childs": [
+      {
+        "id": 2,
+        "lineStyle": "stroke: #5DADE2; stroke-width: 4;",
+        "x1": 50,
+        "y1": 200,
+        "x2": 500,
+        "y2": 100,
+        "className": "class2HS Line"
+      }
+    ]
+  },
+  {
+    "nodeId": 2,
+    "nodeType": "process",
+    "nodeY": 200,
+    "nodeX": 50,
+    "height": 0,
+    "width": 0,
+    "name": "Finance",
+    "className": "class2",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill: #8CEE9F; stroke-width: 1; stroke: #d7dbdd;",
+    "parents": [
+      {
+        "id": 1
+      }
+    ],
+    "childs": [
+      {
+        "id": 3,
+        "lineStyle": "stroke: #5DADE2; stroke-width: 4;",
+        "x1": 500,
+        "y1": 100,
+        "x2": 950,
+        "y2": 200,
+        "className": "class3HS Line"
+      }
+    ]
+  },
+  {
+    "nodeId": 3,
+    "nodeType": "process",
+    "nodeY": 310,
+    "nodeX": 50,
+    "height": 0,
+    "width": 0,
+    "name": "End Payroll",
+    "className": "class3",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill: #8CEE9F; stroke-width: 1; stroke: #d7dbdd",
+    "parents": [
+      {
+        "id": 2
+      }
+    ],
+    "childs": [
+      {
+        "id": 7,
+        "lineStyle": "stroke: #5DADE2; stroke-width: 4;",
+        "x1": 500,
+        "y1": 300,
+        "x2": 950,
+        "y2": 200,
+        "className": "class7HS Line"
+      }
+    ]
+  },
+  {
+    "nodeId": 4,
+    "nodeType": "startend",
+    "nodeY": 600,
+    "nodeX": 700,
+    "height": 0,
+    "width": 0,
+    "name": "Completed",
+    "className": "class4",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill: #88EAEA; stroke-width: 1; stroke: #d7dbdd",
+    "parents": [
+      {
+        "id": 10
+      },
+      {
+        "id": 20
+      }
+    ],
+    "childs": []
+  },
+  {
+    "nodeId": 5,
+    "nodeType": "startcircle",
+    "nodeY": 150,
+    "nodeX": 1250,
+    "height": 0,
+    "width": 0,
+    "name": "BadOne",
+    "className": "class5",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill: #D68910; stroke-width: 1; stroke: #d7dbdd",
+    "parents": [
+      {
+        "id": 9
+      }
+    ],
+    "childs": [
+      {
+        "id": 12,
+        "lineStyle": "stroke: #5DADE2; stroke-width: 4;",
+        "x1": 500,
+        "y1": 700,
+        "x2": 950,
+        "y2": 200,
+        "className": "class12HS Line"
+      }
+    ]
+  },
+  {
+    "nodeId": 6,
+    "nodeType": "process",
+    "nodeY": 530,
+    "nodeX": 225,
+    "height": 0,
+    "width": 0,
+    "name": "HR2",
+    "className": "class6",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill: #8CEE9F; stroke-width: 1; stroke: #d7dbdd",
+    "parents": [
+      {
+        "id": 8
+      }
+    ],
+    "childs": [
+      {
+        "id": 11,
+        "lineStyle": "stroke: #5DADE2; stroke-width: 4;",
+        "x1": 500,
+        "y1": 700,
+        "x2": 950,
+        "y2": 200,
+        "className": "class11HS Line"
+      }
+    ]
+  },
+  {
+    "nodeId": 7,
+    "nodeType": "decision",
+    "nodeY": 185,
+    "nodeX": 250,
+    "height": 0,
+    "width": 0,
+    "name": "Sure",
+    "className": "class7",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill: #9B59B6; stroke-width: 1; stroke: #d7dbdd",
+    "parents": [
+      {
+        "id": 3
+      }
+    ],
+    "childs": [
+      {
+        "id": 8,
+        "lineStyle": "stroke: #5DADE2; stroke-width: 4;",
+        "x1": 500,
+        "y1": 900,
+        "x2": 950,
+        "y2": 200,
+        "className": "class8HS Line"
+      },
+      {
+        "id": 9,
+        "lineStyle": "stroke: #5DADE2; stroke-width: 4;",
+        "x1": 500,
+        "y1": 900,
+        "x2": 950,
+        "y2": 200,
+        "className": "class9HS Line"
+      }
+    ]
+  },
+  {
+    "nodeId": 8,
+    "nodeType": "intermediatecircle",
+    "nodeY": 350,
+    "nodeX": 228,
+    "height": 0,
+    "width": 0,
+    "name": "GoodOne",
+    "className": "class8",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill: #15B648; stroke-width: 1; stroke: #d7dbdd",
+    "parents": [
+      {
+        "id": 7
+      }
+    ],
+    "childs": [
+      {
+        "id": 6,
+        "lineStyle": "stroke: #5DADE2; stroke-width: 4;stroke-dasharray: 5,5;",
+        "x1": 500,
+        "y1": 700,
+        "x2": 950,
+        "y2": 200,
+        "className": "class6HS Line"
+      }
+    ]
+  },
+  {
+    "nodeId": 9,
+    "nodeType": "endcircle",
+    "nodeY": 150,
+    "nodeX": 1000,
+    "height": 0,
+    "width": 0,
+    "name": "BetterOne",
+    "className": "class9",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill: #DE4FE0; stroke-width: 5; stroke: #707B7C ",
+    "parents": [
+      {
+        "id": 7
+      }
+    ],
+    "childs": [
+      {
+        "id": 5,
+        "lineStyle": "stroke: #5DADE2; stroke-width: 4;",
+        "x1": 500,
+        "y1": 700,
+        "x2": 950,
+        "y2": 200,
+        "className": "class5HS Line"
+      }
+    ]
+  },
+  {
+    "nodeId": 10,
+    "nodeType": "rectcall",
+    "nodeY": 700,
+    "nodeX": 500,
+    "height": 0,
+    "width": 0,
+    "name": "Call",
+    "className": "class10",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill: #8CEE9F; stroke-width: 5; stroke: #707B7C ;",
+    "parents": [
+      {
+        "id": 11
+      }
+    ],
+    "childs": [
+      {
+        "id": 4,
+        "lineStyle": "stroke: #5DADE2; stroke-width: 4;",
+        "x1": 500,
+        "y1": 100,
+        "x2": 950,
+        "y2": 200,
+        "className": "class4HS Line"
+      }
+    ]
+  },
+  {
+    "nodeId": 11,
+    "nodeType": "rectsubprocess",
+    "nodeY": 700,
+    "nodeX": 225,
+    "height": 0,
+    "width": 0,
+    "name": "subprocess",
+    "className": "class11",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill: #8CEE9F; stroke-width: 3; stroke: #707B7C ;stroke-dasharray: 5,5;",
+    "parents": [
+      {
+        "id": 6
+      }
+    ],
+    "childs": [
+      {
+        "id": 10,
+        "lineStyle": "stroke: #5DADE2; stroke-width: 4;",
+        "x1": 500,
+        "y1": 100,
+        "x2": 950,
+        "y2": 200,
+        "className": "class10HS Line"
+      }
+    ]
+  },
+  {
+    "nodeId": 12,
+    "nodeType": "recttransaction",
+    "nodeY": 180,
+    "nodeX": 1540,
+    "height": 0,
+    "width": 0,
+    "name": "RTech",
+    "className": "class12",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill: #9A7D0A; stroke-width: 1; stroke: #34495E  ",
+    "parents": [
+      {
+        "id": 5
+      }
+    ],
+    "childs": [
+      {
+        "id": 13,
+        "lineStyle": "stroke: #5DADE2; stroke-width: 4;stroke-dasharray: 5,5;",
+        "x1": 500,
+        "y1": 700,
+        "x2": 950,
+        "y2": 200,
+        "className": "class13HS Line"
+      }
+    ]
+  },
+  {
+    "nodeId": 13,
+    "nodeType": "circleevent",
+    "nodeY": 390,
+    "nodeX": 1560,
+    "height": 0,
+    "width": 0,
+    "name": "C Mail",
+    "className": "class13",
+    "bg": "url(#emailImage)",
+    "patternId": "emailImage",
+    "patternImage": "/assets/images/workflow/email.png",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "stroke-width: 1; stroke: #34495E; ",
+    "parents": [
+      {
+        "id": 12
+      }
+    ],
+    "childs": [
+      {
+        "id": 14,
+        "lineStyle": "stroke: #5DADE2; stroke-width: 4;",
+        "x1": 500,
+        "y1": 700,
+        "x2": 950,
+        "y2": 200,
+        "className": "class14HS Line"
+      }
+    ]
+  },
+  {
+    "nodeId": 14,
+    "nodeType": "circleevent",
+    "nodeY": 500,
+    "nodeX": 1560,
+    "height": 0,
+    "width": 0,
+    "name": "close",
+    "className": "class14",
+    "bg": "url(#closeImage)",
+    "patternId": "closeImage",
+    "patternImage": "/assets/images/workflow/close.jpg",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "stroke-width: 1; stroke: #34495E; ",
+    "parents": [
+      {
+        "id": 13
+      }
+    ],
+    "childs": [
+      {
+        "id": 15,
+        "lineStyle": "stroke: #5DADE2; stroke-width: 4;",
+        "x1": 500,
+        "y1": 700,
+        "x2": 950,
+        "y2": 200,
+        "className": "class15HS Line"
+      }
+    ]
+  },
+  {
+    "nodeId": 15,
+    "nodeType": "circleevent",
+    "nodeY": 600,
+    "nodeX": 1560,
+    "height": 0,
+    "width": 0,
+    "name": "add",
+    "className": "class15",
+    "bg": "url(#addImage)",
+    "patternId": "addImage",
+    "patternImage": "/assets/images/workflow/add.png",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "stroke-width: 1; stroke: #34495E; ",
+    "parents": [
+      {
+        "id": 14
+      }
+    ],
+    "childs": [
+      {
+        "id": 16,
+        "lineStyle": "stroke: #5DADE2; stroke-width: 4;",
+        "x1": 500,
+        "y1": 700,
+        "x2": 950,
+        "y2": 200,
+        "className": "class16HS Line"
+      }
+    ]
+  },
+  {
+    "nodeId": 16,
+    "nodeType": "circleevent",
+    "nodeY": 600,
+    "nodeX": 1400,
+    "height": 0,
+    "width": 0,
+    "name": "watch",
+    "className": "class16",
+    "bg": "url(#watchImage)",
+    "patternId": "watchImage",
+    "patternImage": "/assets/images/workflow/watch.jpg",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "stroke-width: 1; stroke: #34495E; ",
+    "parents": [
+      {
+        "id": 15
+      }
+    ],
+    "childs": [
+      {
+        "id": 17,
+        "lineStyle": "stroke: #5DADE2; stroke-width: 4;",
+        "x1": 500,
+        "y1": 700,
+        "x2": 950,
+        "y2": 200,
+        "className": "class17HS Line"
+      }
+    ]
+  },
+  {
+    "nodeId": 17,
+    "nodeType": "circleevent",
+    "nodeY": 500,
+    "nodeX": 1400,
+    "height": 0,
+    "width": 0,
+    "name": "rightArrow",
+    "className": "class17",
+    "bg": "url(#rightArrowImage)",
+    "patternId": "rightArrowImage",
+    "patternImage": "/assets/images/workflow/rightArrow.jpg",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "stroke-width: 1; stroke: #34495E; ",
+    "parents": [
+      {
+        "id": 16
+      }
+    ],
+    "childs": [
+      {
+        "id": 18,
+        "lineStyle": "stroke: #5DADE2; stroke-width: 4;",
+        "x1": 500,
+        "y1": 700,
+        "x2": 950,
+        "y2": 200,
+        "className": "class18HS Line"
+      }
+    ]
+  },
+  {
+    "nodeId": 18,
+    "nodeType": "circleevent",
+    "nodeY": 390,
+    "nodeX": 1400,
+    "height": 0,
+    "width": 0,
+    "name": "leftDirection",
+    "className": "class18",
+    "bg": "url(#leftDirectionImage)",
+    "patternId": "leftDirectionImage",
+    "patternImage": "/assets/images/workflow/leftDirection.jpg",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "stroke-width: 1; stroke: #34495E; ",
+    "parents": [
+      {
+        "id": 17
+      }
+    ],
+    "childs": [
+      {
+        "id": 19,
+        "lineStyle": "stroke: #5DADE2; stroke-width: 4;",
+        "x1": 500,
+        "y1": 700,
+        "x2": 950,
+        "y2": 200,
+        "className": "class19HS Line"
+      }
+    ]
+  },
+  {
+    "nodeId": 19,
+    "nodeType": "circleevent",
+    "nodeY": 390,
+    "nodeX": 1200,
+    "height": 0,
+    "width": 0,
+    "name": "storage",
+    "className": "class19",
+    "bg": "url(#storageImage)",
+    "patternId": "storageImage",
+    "patternImage": "/assets/images/workflow/storage.jpg",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "stroke-width: 1; stroke: #34495E; ",
+    "parents": [
+      {
+        "id": 18
+      }
+    ],
+    "childs": [
+      {
+        "id": 20,
+        "lineStyle": "stroke: #5DADE2; stroke-width: 4;",
+        "x1": 500,
+        "y1": 700,
+        "x2": 950,
+        "y2": 200,
+        "className": "class20HS Line"
+      }
+    ]
+  },
+  {
+    "nodeId": 20,
+    "nodeType": "circleevent",
+    "nodeY": 390,
+    "nodeX": 1000,
+    "height": 0,
+    "width": 0,
+    "name": "admin",
+    "className": "class20",
+    "bg": "url(#adminImage)",
+    "patternId": "adminImage",
+    "patternImage": "/assets/images/workflow/admin.jpg",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "stroke-width: 1; stroke: #34495E; ",
+    "parents": [
+      {
+        "id": 19
+      }
+    ],
+    "childs": [
+      {
+        "id": 4,
+        "lineStyle": "stroke: #5DADE2; stroke-width: 4;",
+        "x1": 500,
+        "y1": 700,
+        "x2": 950,
+        "y2": 200,
+        "className": "class4HS Line"
+      }
+    ]
+  },
+  {
+    "nodeId": 21,
+    "nodeType": "pool",
+    "nodeY": 60,
+    "nodeX": 5,
+    "height": 420,
+    "width": 400,
+    "name": "pool",
+    "className": "class21",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill:#A2D9CE;stroke-width: 1; stroke: #34495E;",
+    "parents": [],
+    "childs": []
+  },
+  {
+    "nodeId": 24,
+    "nodeType": "pool",
+    "nodeY": 500,
+    "nodeX": 5,
+    "height": 280,
+    "width": 650,
+    "name": "pool2",
+    "className": "class24",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill:#D8D97B;stroke-width: 1; stroke: #34495E;",
+    "parents": [],
+    "childs": []
+  },
+  {
+    "nodeId": 25,
+    "nodeType": "pool",
+    "nodeY": 340,
+    "nodeX": 980,
+    "height": 360,
+    "width": 530,
+    "name": "pool3",
+    "className": "class25",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill:#3498DB;stroke-width: 1; stroke: #34495E;",
+    "parents": [],
+    "childs": []
+  },
+  {
+    "nodeId": 26,
+    "nodeType": "pool",
+    "nodeY": 130,
+    "nodeX": 1520,
+    "height": 570,
+    "width": 150,
+    "name": "pool4",
+    "className": "class26",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill:#FADBD8 ;stroke-width: 1; stroke: #34495E;",
+    "parents": [],
+    "childs": []
+  },
+  {
+    "nodeId": 27,
+    "nodeType": "pool",
+    "nodeY": 110,
+    "nodeX": 950,
+    "height": 170,
+    "width": 450,
+    "name": "pool5",
+    "className": "class27",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 0,
+      "y1": 0,
+      "x2": 0,
+      "y2": 0
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill:#D7DBDD ;stroke-width: 1; stroke: #34495E;",
+    "parents": [],
+    "childs": []
+  },
+  {
+    "nodeId": 28,
+    "nodeType": "poolline",
+    "nodeY": 550,
+    "nodeX": 90,
+    "height": 400,
+    "width": 800,
+    "name": "poolLine",
+    "className": "class28",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 50,
+      "y1": 600,
+      "x2": 650,
+      "y2": 600
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill:#A2D9CE;stroke-width: 2; stroke: #34495E;stroke-dasharray: 5,5;",
+    "parents": [],
+    "childs": []
+  },
+  {
+    "nodeId": 29,
+    "nodeType": "poolline",
+    "nodeY": 550,
+    "nodeX": 90,
+    "height": 400,
+    "width": 800,
+    "name": "poolLine",
+    "className": "class29",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 50,
+      "y1": 500,
+      "x2": 50,
+      "y2": 772
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill:#A2D9CE;stroke-width: 2; stroke: #34495E;",
+    "parents": [],
+    "childs": []
+  },
+  {
+    "nodeId": 30,
+    "nodeType": "poolline",
+    "nodeY": 550,
+    "nodeX": 90,
+    "height": 400,
+    "width": 800,
+    "name": "poolLine",
+    "className": "class30",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 1150,
+      "y1": 380,
+      "x2": 1150,
+      "y2": 695
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill:#A2D9CE;stroke-width: 2; stroke: #34495E;stroke-dasharray: 5,5;",
+    "parents": [],
+    "childs": []
+  },
+  {
+    "nodeId": 31,
+    "nodeType": "poolline",
+    "nodeY": 550,
+    "nodeX": 90,
+    "height": 400,
+    "width": 800,
+    "name": "poolLine",
+    "className": "class31",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 980,
+      "y1": 380,
+      "x2": 1505,
+      "y2": 380
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill:#A2D9CE;stroke-width: 2; stroke: #34495E;",
+    "parents": [],
+    "childs": []
+  },
+  {
+    "nodeId": 32,
+    "nodeType": "freetext",
+    "nodeY": 100,
+    "nodeX": 320,
+    "height": 400,
+    "width": 800,
+    "name": "Frontdesk",
+    "className": "class32",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 980,
+      "y1": 380,
+      "x2": 1505,
+      "y2": 380
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill:#A2D9CE;stroke-width: 2; stroke: #34495E;",
+    "parents": [],
+    "childs": []
+  },
+  {
+    "nodeId": 33,
+    "nodeType": "freetext",
+    "nodeY": 130,
+    "nodeX": 1300,
+    "height": 400,
+    "width": 800,
+    "name": "Middleware",
+    "className": "class33",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 980,
+      "y1": 380,
+      "x2": 1505,
+      "y2": 380
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill:#A2D9CE;stroke-width: 2; stroke: #34495E;",
+    "parents": [],
+    "childs": []
+  },
+  {
+    "nodeId": 34,
+    "nodeType": "freetext",
+    "nodeY": 360,
+    "nodeX": 1200,
+    "height": 400,
+    "width": 800,
+    "name": "Third Party Service",
+    "className": "class34",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 980,
+      "y1": 380,
+      "x2": 1505,
+      "y2": 380
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill:#A2D9CE;stroke-width: 2; stroke: #34495E;",
+    "parents": [],
+    "childs": []
+  },
+  {
+    "nodeId": 35,
+    "nodeType": "freetext",
+    "nodeY": 680,
+    "nodeX": 1200,
+    "height": 400,
+    "width": 800,
+    "name": "AWS Service",
+    "className": "class35",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 980,
+      "y1": 380,
+      "x2": 1505,
+      "y2": 380
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill:#A2D9CE;stroke-width: 2; stroke: #34495E;",
+    "parents": [],
+    "childs": []
+  },
+  {
+    "nodeId": 36,
+    "nodeType": "freetext",
+    "nodeY": 680,
+    "nodeX": 1000,
+    "height": 400,
+    "width": 800,
+    "name": "Azure Service",
+    "className": "class36",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 980,
+      "y1": 380,
+      "x2": 1505,
+      "y2": 380
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill:#A2D9CE;stroke-width: 2; stroke: #34495E;",
+    "parents": [],
+    "childs": []
+  },
+  {
+    "nodeId": 37,
+    "nodeType": "freetext",
+    "nodeY": 150,
+    "nodeX": 1550,
+    "height": 400,
+    "width": 800,
+    "name": "Security",
+    "className": "class37",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 980,
+      "y1": 380,
+      "x2": 1505,
+      "y2": 380
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill:#A2D9CE;stroke-width: 2; stroke: #34495E;",
+    "parents": [],
+    "childs": []
+  },
+  {
+    "nodeId": 38,
+    "nodeType": "freetext",
+    "nodeY": 210,
+    "nodeX": 350,
+    "height": 400,
+    "width": 800,
+    "name": "Yes",
+    "className": "class38",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 980,
+      "y1": 380,
+      "x2": 1505,
+      "y2": 380
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill:#A2D9CE;stroke-width: 2; stroke: #34495E;",
+    "parents": [],
+    "childs": []
+  },
+  {
+    "nodeId": 39,
+    "nodeType": "freetext",
+    "nodeY": 290,
+    "nodeX": 250,
+    "height": 400,
+    "width": 800,
+    "name": "No",
+    "className": "class39",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 980,
+      "y1": 380,
+      "x2": 1505,
+      "y2": 380
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill:#A2D9CE;stroke-width: 2; stroke: #34495E;",
+    "parents": [],
+    "childs": []
+  },
+  {
+    "nodeId": 40,
+    "nodeType": "freetext",
+    "nodeY": 520,
+    "nodeX": 550,
+    "height": 400,
+    "width": 800,
+    "name": "HR Section",
+    "className": "class40",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 980,
+      "y1": 380,
+      "x2": 1505,
+      "y2": 380
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill:#A2D9CE;stroke-width: 2; stroke: #34495E;",
+    "parents": [],
+    "childs": []
+  },
+  {
+    "nodeId": 41,
+    "nodeType": "freetext",
+    "nodeY": 620,
+    "nodeX": 550,
+    "height": 400,
+    "width": 800,
+    "name": "Call Centre",
+    "className": "class41",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 980,
+      "y1": 380,
+      "x2": 1505,
+      "y2": 380
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill:#A2D9CE;stroke-width: 2; stroke: #34495E;",
+    "parents": [],
+    "childs": []
+  },
+  {
+    "nodeId": 42,
+    "nodeType": "freetext",
+    "nodeY": 90,
+    "nodeX": 850,
+    "height": 400,
+    "width": 800,
+    "name": "XYZ SYSTEM PROCESS",
+    "className": "class42",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 980,
+      "y1": 380,
+      "x2": 1505,
+      "y2": 380
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill:#A2D9CE;stroke-width: 2; stroke: #34495E;",
+    "parents": [],
+    "childs": []
+  },
+  {
+    "nodeId": 43,
+    "nodeType": "freetextvertical",
+    "nodeY": 680,
+    "nodeX": 30,
+    "height": 400,
+    "width": 800,
+    "name": "Internal Process",
+    "className": "class43",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 980,
+      "y1": 380,
+      "x2": 1505,
+      "y2": 380
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill:#A2D9CE;stroke-width: 2; stroke: #34495E;",
+    "parents": [],
+    "childs": []
+  },
+  {
+    "nodeId": 44,
+    "nodeType": "linetoarrow",
+    "nodeY": 10,
+    "nodeX": 10,
+    "height": 400,
+    "width": 800,
+    "name": "poolLine",
+    "className": "class44",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 10,
+      "y1": 10,
+      "x2": 50,
+      "y2": 10
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill:#5DADE2;stroke-width: 2; stroke: #34495E;",
+    "parents": [],
+    "childs": []
+  },
+  {
+    "nodeId": 45,
+    "nodeType": "linetoarrow",
+    "nodeY": 10,
+    "nodeX": 10,
+    "height": 400,
+    "width": 800,
+    "name": "poolLine",
+    "className": "class45",
+    "bg": "",
+    "patternId": "",
+    "patternImage": "",
+    "lineCordinates": {
+      "x1": 10,
+      "y1": 20,
+      "x2": 50,
+      "y2": 20
+    },
+    "touchPoints": {
+      "topCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "rightCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "bottomCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "leftCenter": {
+        "x": 0,
+        "y": 0
+      },
+      "mid": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "style": "fill:#5DADE2;stroke-width: 2; stroke: #34495E;",
+    "parents": [],
+    "childs": []
+  }
+]
