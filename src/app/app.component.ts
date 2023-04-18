@@ -62,10 +62,11 @@ export class AppComponent implements OnInit {
   divStyle: any = '';
   patternList: any = [];
   linetoarrowList: any = [];
+  rex = [0];
 
   nodes: any = (data as any).default;
 
-  constructor(private renderer: Renderer2, private dialog: MatDialog, private svgService: SvgService) {}
+  constructor(private renderer: Renderer2, private dialog: MatDialog, private svgService: SvgService) { }
 
   ngOnInit(): void {
     this.screenWidth = '1800px'; // window.innerWidth + 'px';
@@ -75,7 +76,7 @@ export class AppComponent implements OnInit {
     this.initMethod();
   }
 
-  
+
   //#region 
 
   @HostListener('dragstart', ['$event'])
@@ -96,20 +97,25 @@ export class AppComponent implements OnInit {
 
   @HostListener('drop', ['$event'])
   onDrop(event: any) {
-    if (event.target.id === "mainSVG") {
-
-      // $("#exampleModal").modal('show');
+    console.log(event.target.id);
+    this.isSymbolSelected = true;
+    this.selectedSymbolType = 'start';
+    this.createSelectedSymbol(event);
+    return;
+    // selectSymbol
+    if (event.target.id === "mainSVG" || event.target.parentElement.id === "mainSVG") {
 
       const dropzone = event.target;
+
       const droppedElementId = event.dataTransfer.getData('text');
       const droppedElement = document.getElementById(droppedElementId) as any;
 
-      // if (droppedElement.tagName === "rect") {
-      //   // this.rex.push(0);
-      // }
-      // else if (droppedElement.tagName === "circle") {
-      //   // this.circleshape.push(0);
-      // }
+      if (droppedElement.tagName === "rect") {
+        this.rex.push(0);
+      }
+      else if (droppedElement.tagName === "circle") {
+        // this.circleshape.push(0);
+      }
 
       if (droppedElement.viewportElement != null) {
         dropzone.appendChild(droppedElement);
@@ -121,10 +127,15 @@ export class AppComponent implements OnInit {
   }
 
   private setPosition(element: any, coord: { x: any, y: any }) {
-    //  console.log("setPosition:-", element.tagName, element, coord);
     if (element.tagName === 'rect') {
+      element.setAttribute('rx', 50);
       element.setAttribute('x', coord.x);
       element.setAttribute('y', coord.y);
+      element.setAttribute('width', 120);
+      element.setAttribute('height', 40);
+      element.style.stroke= "#d7dbdd";
+      element.style.fill=" #88EAEA";
+      
     }
     else {
       element.setAttribute('cx', coord.x);
@@ -1129,7 +1140,7 @@ export class AppComponent implements OnInit {
     });
   }
 
-  SaveRecord() {}
+  SaveRecord() { }
 
   close() {
     this.dialog.closeAll();
@@ -1137,6 +1148,7 @@ export class AppComponent implements OnInit {
 
   isSymbolSelected: boolean = false;
   selectedSymbolType: string = '';
+
   selectSymbol(symbolType: any) {
     this.isSymbolSelected = true;
     this.selectedSymbolType = symbolType;

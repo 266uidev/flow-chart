@@ -1,6 +1,6 @@
 <div #topDiv class="content" role="main">
   <div #tooltip class="tooltip"></div>
-  <svg id="menuSVG" attr.width="{{screenWidth}}" height="40" style="background-color: #D0ECE8;"
+  <!-- <svg id="menuSVG" attr.width="{{screenWidth}}" height="40" style="background-color: #D0ECE8;"
     onload="makeDraggable(evt)">
     <defs>
       <marker id="arrow" viewBox="0 -5 10 10" refX="5" refY="0" markerWidth="4" markerHeight="4" orient="auto">
@@ -15,7 +15,6 @@
 
 
 
-    <!-- menu start -->
     <rect attr.width="{{screenWidth}}" height="50" x="0" y="0" style="fill:#c0f157;stroke-width:1;stroke:rgb(0,0,0)" />
 
     <rect width="30" height="20" x="10" y="10" rx="15" attr.fill="{{isSymbolSelected?'#280DEF':'#48C9B0'}}"
@@ -72,23 +71,112 @@
       attr.width="{{ 30}}" attr.height="{{ 30 }}" attr.style="{{ node.style }}" rx="100" attr.fill="{{ node.bg }}"
       (mouseenter)="mouseEnter($event, node.bg.replace('url(#','').replace(')',''))"
       (mouseleave)="mouseLeave($event)" />
-    <!-- menu end -->
-  </svg>
+ 
+  </svg> -->
 
   <div style="height: 40px; display: flex; background-color:#c0f157;stroke-width:1;stroke:rgb(0,0,0)">
     <div draggable="true">
-      <svg width="50">
-        <rect id="circle-red" width="30" height="20" x="10" y="10" rx="15" attr.fill="{{isSymbolSelected?'#280DEF':'#48C9B0'}}"
-        style="stroke-width:1;stroke:rgb(0,0,0)" (mouseenter)="mouseEnter($event, 'Start/End')"
-        (mouseleave)="mouseLeave($event)" (click)="selectSymbol('start')" >
+      <svg width="50" height="40">
+        <rect *ngFor="let rec of rex" id="circle-red" width="30" height="20" x="10" y="10" rx="15"
+          attr.fill="{{isSymbolSelected?'#280DEF':'#48C9B0'}}" style="stroke-width:1;stroke:rgb(0,0,0)"
+          (mouseenter)="mouseEnter($event, 'Start/End')" (mouseleave)="mouseLeave($event)"
+          (click)="selectSymbol('start')">
         </rect>
       </svg>
     </div>
     <div draggable="true">
-      <svg width="50">
-        <rect id="circle-red2" width="25" height="25" x="10" y="8" rx="20" style="fill:#48C9B0;stroke-width:1;stroke:rgb(0,0,0)"
-      (mouseenter)="mouseEnter($event, 'Process')" (mouseleave)="mouseLeave($event)" >
+      <svg width="50" height="40">
+        <rect id="circle-red2" width="25" height="25" x="10" y="8" rx="20"
+          style="fill:#48C9B0;stroke-width:1;stroke:rgb(0,0,0)" (mouseenter)="mouseEnter($event, 'Process')"
+          (mouseleave)="mouseLeave($event)">
         </rect>
+      </svg>
+    </div>
+
+    <div draggable="true">
+      <svg width="50" height="40">
+        <rect width="25" height="25" x="10" y="8" rx="20" style="fill:#48C9B0;stroke-width:1;stroke:rgb(0,0,0)"
+          (mouseenter)="mouseEnter($event, 'Intermidiate Process')" (mouseleave)="mouseLeave($event)" />
+          <rect width="16" height="16" x="15" y="12" rx="20" style="fill:#48C9B0;stroke-width:1;stroke:rgb(0,0,0)"
+          (mouseenter)="mouseEnter($event, 'Intermidiate Process')" (mouseleave)="mouseLeave($event)" />
+      </svg>
+    </div>
+    <div draggable="true">
+      <svg width="60" height="40">
+        <rect width="35" height="20" x="10" y="10" style="fill:#48C9B0;stroke-width:1;stroke:rgb(0,0,0)"
+          (mouseenter)="mouseEnter($event, 'Input/Output')" (mouseleave)="mouseLeave($event)" />
+      </svg>
+    </div>
+    <div draggable="true">
+      <svg width="60" height="40">
+        <rect width="35" height="20" x="10" y="10"
+          style="fill:#48C9B0;stroke-width:1;stroke:rgb(0,0,0);stroke-dasharray: 5,5;"
+          (mouseenter)="mouseEnter($event, 'Sub Process')" (mouseleave)="mouseLeave($event)" />
+      </svg>
+    </div>
+    <div draggable="true">
+      <svg width="60" height="40">
+        <rect width="35" height="20" x="10" y="10" style="fill:#48C9B0;stroke-width:3;stroke:rgb(0,0,0)"
+          (mouseenter)="mouseEnter($event, 'Call')" (mouseleave)="mouseLeave($event)" />
+      </svg>
+    </div>
+    <div draggable="true">
+      <svg width="60" height="40">
+        <rect width="35" height="25" x="10" y="8" style="fill:#48C9B0;stroke-width:1;stroke:rgb(0,0,0)"
+          (mouseenter)="mouseEnter($event, 'Sub Process')" (mouseleave)="mouseLeave($event)" />
+      </svg>
+    </div>
+    <div draggable="true">
+      <svg width="60" height="40">
+        <rect width="40" height="25" x="10" y="8" rx="5" style="fill:#48C9B0;stroke-width:1;stroke:rgb(0,0,0)"
+          (mouseenter)="mouseEnter($event, 'Intermidiate Process')" (mouseleave)="mouseLeave($event)" />
+          <rect width="30" height="17" x="15" y="12" rx="5" style="fill:#48C9B0;stroke-width:1;stroke:rgb(0,0,0)"
+          (mouseenter)="mouseEnter($event, 'Intermidiate Process')" (mouseleave)="mouseLeave($event)" />
+      </svg>
+    </div>
+    <div draggable="true">
+      <svg width="60" height="40">
+        <rect width="18" height="18" x="10" y="12" transform="rotate(45)" class="decision"
+          style="fill:#48C9B0;stroke-width:1;stroke:rgb(0,0,0)" (mouseenter)="mouseEnter($event, 'Decision')"
+          (mouseleave)="mouseLeave($event)" style="fill:#48C9B0;stroke-width:1;stroke:rgb(0,0,0)" />
+      </svg>
+    </div>
+    <div draggable="true">
+      <svg width="60" height="40">
+        <line y1="20" x1="10" y2="20" x2="50" (mouseenter)="mouseEnter($event, 'Horizontal Swim Line')"
+          (mouseleave)="mouseLeave($event)" style="stroke: #5DADE2; stroke-width: 2;" />
+      </svg>
+    </div>
+    <div draggable="true">
+      <svg width="40" height="40">
+        <line y1="5" x1="20" y2="35" x2="20" (mouseenter)="mouseEnter($event, 'Vertical Swim Line')"
+          (mouseleave)="mouseLeave($event)" style="stroke: #5DADE2; stroke-width: 2;" />
+
+      </svg>
+    </div>
+
+    <div draggable="true">
+      <svg width="100" height="40">
+        <text y="25" x="10" fill="black" attr.font-size="{{ fontSize }}" (mouseenter)="mouseEnter($event, 'Free Text')"
+          (mouseleave)="mouseLeave($event)">
+          Free Text
+        </text>
+      </svg>
+    </div>
+    <div draggable="true">
+      <svg width="60" height="40">
+        <rect width="40" height="25" x="10" y="8" style="fill:#48C9B0;stroke-width:1;stroke:rgb(0,0,0)"
+          (mouseenter)="mouseEnter($event, 'Pools')" (mouseleave)="mouseLeave($event)" />
+          <rect width="10" height="10" x="40" y="23" style="fill:#636766;stroke-width:1;stroke:rgb(0,0,0)"
+          (mouseenter)="mouseEnter($event, 'Pools')" (mouseleave)="mouseLeave($event)" />
+      </svg>
+    </div>
+    <div draggable="true" *ngFor="let node of circleEvents;let i = index">
+      <svg width="50" height="40">
+        <rect attr.y="{{ 6 }}" attr.x="10"
+        attr.width="{{ 30}}" attr.height="{{ 30 }}" attr.style="{{ node.style }}" rx="100" attr.fill="{{ node.bg }}"
+        (mouseenter)="mouseEnter($event, node.bg.replace('url(#','').replace(')',''))"
+        (mouseleave)="mouseLeave($event)" />
       </svg>
     </div>
   </div>
@@ -211,24 +299,28 @@
     </script>
 
     <!-- pool start -->
-    <rect *ngFor="let node of poolNodes" (mousedown)="mouseDown($event,node.nodeId,node.className)"
+    <rect *ngFor="let node of poolNodes;let i = index" (mousedown)="mouseDown($event,node.nodeId,node.className)"
       (mouseup)="mouseUp($event,node.nodeId,node.className)" attr.y="{{ node.nodeY }}" attr.x="{{ node.nodeX }}"
       attr.width="{{ node.width}}" attr.height="{{ node.height }}" attr.style="{{ node.style }}"
-      attr.class="{{node.className+ ' draggable'}}" />
+      attr.class="{{node.className+ ' draggable'}}" id="base{{ i}}"/>
+
     <rect *ngFor="let node of poolNodes" (mousedown)="mouseDown($event,node.nodeId,node.className,true)"
       (mouseup)="mouseUp($event,node.nodeId,node.className,true)" attr.y="{{ node.nodeY+node.height-20 }}"
       attr.x="{{ node.nodeX+node.width-20 }}" attr.width="{{ 20 }}" attr.height="{{ 20 }}"
       style="fill:#273746;stroke-width: 1; stroke: #34495E;" attr.class="{{node.className + 'HS draggable'}}" />
+
     <line *ngFor="let poolLine of poolLineNodes" attr.y1="{{ poolLine.lineCordinates.y1 }}"
       attr.x1="{{ poolLine.lineCordinates.x1  }}" attr.y2="{{ poolLine.lineCordinates.y2 }}"
       attr.x2="{{ poolLine.lineCordinates.x2 }}" attr.style="{{ poolLine.style }}"
       attr.class="{{poolLine.className}}" />
+
     <rect *ngFor="let poolLine of poolLineNodes"
       (mousedown)="mouseDown($event,poolLine.nodeId,poolLine.className,true,true)"
       (mouseup)="mouseUp($event,poolLine.nodeId,poolLine.className,true,true)"
       attr.y="{{ poolLine.lineCordinates.y1-2 }}" attr.x="{{ poolLine.lineCordinates.x1 -2}}" attr.width="{{ 10 }}"
       attr.height="{{ 10 }}" rx="100" style="fill:#273746;stroke-width: 1; stroke: #34495E;"
       attr.class="{{poolLine.className + 'HS draggable'}}" />
+
     <rect *ngFor="let poolLine of poolLineNodes"
       (mousedown)="mouseDown($event,poolLine.nodeId,poolLine.className,true,false)"
       (mouseup)="mouseUp($event,poolLine.nodeId,poolLine.className,true)" attr.y="{{ poolLine.lineCordinates.y2-2 }}"
